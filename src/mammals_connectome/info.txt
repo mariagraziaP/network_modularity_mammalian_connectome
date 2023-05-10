@@ -1,0 +1,5 @@
+conn_mat_ : counts
+conn_mat_gn_ : counts normalized
+leng_mat : length
+
+run1_divergence : passi per rimuovere gli outliars compiuti da josh
