@@ -2,7 +2,7 @@
 
 ## Details
 
-Here you'll find MATLAB scripts and functions to analyze the mammalian connectomes from the MAMI database. Results are reported in the paper "Network modularity and its relation to brain volume in the mammalian connectome".
+Here you'll find MATLAB scripts and functions to analyze the mammalian connectomes from the MAMI database. Results are reported in the paper "Relation of connectome topology to brain volume across 103 mammalian species".
 
 ## Paper abstract
 
