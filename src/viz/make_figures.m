@@ -92,28 +92,31 @@ av_int_gw = mean(intercept_gw); std_int_gw = std(intercept_gw);
     'type','Spearman');
 
 ff = figure;
-pp1 = scatter(mod_ind.brainSize(2).val, mod_ind.brainSize(4).val, 50,...
-    'MarkerFaceColor', rgb('LightSlateGrey'), 'MarkerEdgeColor', [0 0 0]);
-axis equal
+plot_scatter_mammals_fig2(indices.brainSize(2).val, indices.brainSize(4).val,...
+        rgb('LightSlateGrey'), col_points, [1 7], 2:6, [1 7], 2:6);
 xlabel('log_{10} Brain Volume (mm^3)')
 ylabel('log_{10} GrayMatter Volume (mm^3)')
-grid on; grid minor; box on
-set(gca, 'FontSize', 16, 'XLim', [1 7], 'XTick', 2:6, 'YLim', [1 7], 'Ytick', 2:6,...
-    'GridColor', [0 0 0], 'MinorGridColor', [0.5 0.5 0.5])
+box on
 title('\rho = 0.9979, pval < 10^{-15}', 'FontSize', 15.5)
 exportgraphics(ff, 'brVol_grMatVol.png', 'Resolution', 300)
 
 ff = figure;
-scatter(mod_ind.brainSize(4).val, mod_ind.brainSize(6).val, 50,...
-    'MarkerFaceColor', rgb('LightSlateGrey'), 'MarkerEdgeColor', [0 0 0]);
-axis equal
+plot_scatter_mammals_fig2(indices.brainSize(4).val, indices.brainSize(6).val,...
+        rgb('LightSlateGrey'), col_points, [1 7], 2:6, [0 7], 1:6);
 xlabel('log_{10} GreyMatter Volume (mm^3)')
 ylabel('log_{10} WhiteMatter Volume (mm^3)')
-grid on; grid minor; box on
-set(gca, 'FontSize', 16, 'XLim', [0 7], 'XTick', 1:6, 'YLim', [0 7], 'Ytick', 1:6,...
-    'GridColor', [0 0 0], 'MinorGridColor', [0.5 0.5 0.5])
+box on
 title('\rho = 0.9644, pval < 10^{-15}', 'FontSize', 15.5)
 exportgraphics(ff, 'grMatVol_whMatVol.png', 'Resolution', 300)
+
+ff = figure;
+plot_scatter_mammals_fig2(indices.brainSize(2).val, indices.brainSize(6).val,...
+        rgb('LightSlateGrey'), col_points, [1 7], 2:6, [0 7], 1:6);
+xlabel('log_{10} Brain Volume (mm^3)')
+ylabel('log_{10} WhiteMatter Volume (mm^3)')
+box on
+title('\rho = 0.976, pval < 10^{-15}', 'FontSize', 15.5)
+exportgraphics(ff, 'whMatVol_brVol.png', 'Resolution', 300)
 
 ff = figure;
 plot_distributions(data2plot(mean_ord), col2plot(mean_ord,:,:));
